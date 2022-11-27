@@ -1,0 +1,11 @@
+  - hosts: all
+    gather_facts: false
+    become: yes
+    tasks:
+      - name: Install docker
+        yum:
+          name: docker
+          state: present
+      - shell: "docker -v"
+        register: docker_verInfo
+      - debug: var=docker_verInfo
