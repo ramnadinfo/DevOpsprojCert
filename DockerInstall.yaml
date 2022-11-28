@@ -5,7 +5,7 @@
       - name: Install docker
         yum:
           name: docker
-          state: present
+          state: started
       - shell: "docker -v"
         register: docker_verInfo
       - debug: var=docker_verInfo
